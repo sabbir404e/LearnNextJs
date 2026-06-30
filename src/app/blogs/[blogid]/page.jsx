@@ -47,11 +47,11 @@ const BlogDetailPage = async ({ params }) => {
     console.log("show me params", blog)
     return (
         <div>
-            <h4 className="text-3xl">Blog detail coming soon</h4>
-
-            {blogs && <div>
-               <h2 className="text-4xl font-bold mb-2">{blog.title}</h2>
-                </div>}
+            <h4 className="text-3xl">Blog details coming soon</h4>
+            {blog && <div>
+              <h2 className="text-4xl font-bold mb-2">{blog.title}</h2>
+              <p>{blog.description}</p>
+              </div>}
         </div>
     );
 };
