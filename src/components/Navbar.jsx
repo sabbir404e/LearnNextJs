@@ -1,16 +1,22 @@
+'use client'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
 
-  const links = <>  
-    <li><Link href="/about">About</Link></li>
-    <li><Link href="/about/contact">Contact</Link></li>
-    <li><Link href="/about/developers">Developers</Link></li>
-    <li><Link href="/about/designers">Designers</Link></li>
-    <li><Link href="/blogs">Blogs</Link></li>
-    <li><Link href="/dashboard">Dashboard</Link></li>
-    <li><Link href="/users">Users</Link></li>
+  const pathName = usePathname();
+  // console.log('pathname in the navbar', pathName);
+
+  const links = <> 
+     <li><Link href="/" className={pathName === '/' ? 'text-blue-400' : ''}>Home</Link></li> 
+    <li><Link href="/about" className={pathName === '/about' ? 'text-blue-400' : ''}>About</Link></li>
+    <li><Link href="/about/contact" className={pathName === '/about/contact' ? 'text-blue-400' : ''}>Contact</Link></li>
+    <li><Link href="/about/developers" className={pathName === '/about/developers' ? 'text-blue-400' : ''}>Developers</Link></li>
+    <li><Link href="/about/designers" className={pathName === '/about/designers' ? 'text-blue-400' : ''}>Designers</Link></li>
+    <li><Link href="/blogs" className={pathName === '/blogs' ? 'text-blue-400' : ''}>Blogs</Link></li>
+    <li><Link href="/dashboard" className={pathName === '/dashboard' ? 'text-blue-400' : ''}>Dashboard</Link></li>
+    <li><Link href="/users" className={pathName === '/users' ? 'text-blue-400' : ''}>Users</Link></li>
   </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -25,7 +31,7 @@ const Navbar = () => {
         {links}
       </ul>
     </div>
-    <Link href="/" className="btn btn-ghost text-xl">daisyUI</Link>
+    <Link href="/" className="btn btn-ghost text-xl">NextUI</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -33,7 +39,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a className="btn">Contact Here</a>
   </div>
 </div>
     );
