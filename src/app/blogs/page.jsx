@@ -1,6 +1,13 @@
 import Link from "next/link";
+import { Roboto } from 'next/font/google'
+ 
+const roboto = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 const BlogsPages = () => {
+
   const blogs = [
     {
       id: 1,
@@ -45,7 +52,7 @@ const BlogsPages = () => {
   ];
 
   return (
-    <div>
+    <div className={roboto.className}>
       <h2 className="text-2xl font-bold mb-4">Blogs</h2>
 
       {blogs.map((blog) => (
